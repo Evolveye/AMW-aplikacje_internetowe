@@ -1,1 +1,1 @@
-web: python ./apps/manage.py runserver
+web: gunicorn apps.apps.wsgi
