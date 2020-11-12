@@ -8,10 +8,15 @@
 
   <title>Document</title>
 
+
   <link rel="stylesheet" href="{% static "blog/css/sanitize.css" %}" />
   <link rel="stylesheet" href="{% static "blog/css/main.css" %}" />
 </head>
 <body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/posts/new">Add post</a>
+  </nav>
   {% block content %}{% endblock %}
 </body>
 </html>
