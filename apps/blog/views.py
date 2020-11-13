@@ -1,4 +1,5 @@
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.views import generic
@@ -38,7 +39,7 @@ def post_new( request ):
 
         elif form.is_valid():
             post = form.save( commit=False )
-            post.author = request.user
+            post.author = User.objects.first()
             post.published_date = timezone.now()
             post.status = 1
             post.slug = slug
@@ -60,7 +61,7 @@ def post_edit( request, slug ):
         form = PostForm( request.POST )
 
         post.title = form.data[ "title" ]
-        post.title = form.data[ "content" ]
+        post.content = form.data[ "content" ]
         post.updated_on = timezone.now()
         post.save()
 
