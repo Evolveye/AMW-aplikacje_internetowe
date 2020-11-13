@@ -212,43 +212,9 @@ blockquote:not( [class] )::before {
  *
 \*/
 
-
-.neumorphizm,
-.neumorphizm-white {
-  min-width: 10px;
-  min-height: 10px;
-  margin: 30px;
-  padding: 10px;
-  box-shadow:
-     8px  8px 12px 0 #8884,
-    -8px -8px 12px 0 #fff;
-  border-radius: 30px;
-}
-button.neumorphizm,
-button.neumorphizm-white {
-  margin: 5px;
-}
-
-button.neumorphizm:active,
-button.neumorphizm-white:active,
-.neumorphizm.is-hoverable:hover,
-.neumorphizm-white.is-hoverable:hover {
-  box-shadow:
-     8px 8px 12px 0 #8882 inset,
-    -8px -8px 12px 0 #fff inset;
-}
-.neumorphizm.is-hoverable > *,
-.neumorphizm-white.is-hoverable > * {
-  transition: all 0.1s;
-}
-button.neumorphizm:active > *,
-button.neumorphizm-white:active > *,
-.neumorphizm.is-hoverable:hover > *,
-.neumorphizm-white.is-hoverable:hover > * {
-  transform: scale( .98 );
-}
-.neumorphizm-white {
-  background-color: white;
+.flex-separator {
+  flex-basis: unset;
+  width: 100%;
 }
 
 .boxed-title,

@@ -1,8 +1,6 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <h1 class="main-title">Blog</h1>
-
   {% for post in post_list %}
     <div class="post">
       <time class="post-date" datetime="{{ post.created_on|date:'d-m-Y' }}">{{ post.created_on|date:'d-m-Y' }}</time>

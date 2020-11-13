@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.header-title {
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-nav-item {
+  flex-wrap: 1;
+  width: max-content;
+  margin: 10px;
+}
+
+.main {
+  /* text-align: center; */
+}
