@@ -2,12 +2,20 @@
 
 {% block content %}
   {% for post in post_list %}
-    <div class="post">
-      <time class="post-date" datetime="{{ post.created_on|date:'d-m-Y' }}">{{ post.created_on|date:'d-m-Y' }}</time>
-      <h2 class="post-title">
-        <a href="{% url 'post_details' post.slug %}">{{ post.title }}</a>
-      </h2>
-      <p class="post-content">{{ post.content|truncatechars:200 }}</p>
-    </div>
+    <article class="post">
+      {% comment %} <img class="post-icon" src="" /> {% endcomment %}
+
+      <section class="post-data">
+        <h2 class="post-title">
+          <a href="{% url 'post_details' post.slug %}">{{ post.title }}</a>
+        </h2>
+
+        <div class="post-meta">
+          <time class="post-date" datetime="{{ post.created_on|date:'d-m-Y' }}">Create date: {{ post.created_on|date:'d-m-Y' }}</time>
+        </div>
+
+        <p class="post-content">{{ post.content|truncatechars:200 }}</p>
+      </section>
+    </article>
   {% endfor %}
 {% endblock %}
