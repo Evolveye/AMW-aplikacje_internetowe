@@ -1,13 +1,15 @@
 {% extends "layout.html" %}
+
 {% block content %}
-  <h1>Blog</h1>
+  <h1 class="main-title">Blog</h1>
 
   {% for post in post_list %}
     <div class="post">
-      <p class="date">created: {{ post.created_on|date:'d-m-Y' }}</p>
-      <h2><a href="{% url 'post_details' post.slug %}">{{ post.title }}</a></h2>
-      <p>{{ post.content|truncatechars:200 }}</p>
+      <time class="post-date" datetime="{{ post.created_on|date:'d-m-Y' }}">{{ post.created_on|date:'d-m-Y' }}</time>
+      <h2 class="post-title">
+        <a href="{% url 'post_details' post.slug %}">{{ post.title }}</a>
+      </h2>
+      <p class="post-content">{{ post.content|truncatechars:200 }}</p>
     </div>
   {% endfor %}
-
 {% endblock %}

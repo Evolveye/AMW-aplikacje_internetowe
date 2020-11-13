@@ -1,14 +1,13 @@
 {% extends "layout.html" %}
+
 {% block content %}
+    <h1 class="main-title">{{ post.title }}</h1>
 
-    <h1>{{ post.title }}</h1>
-
-    <form method="POST">
+    <form class="form" method="POST">
         {% csrf_token %}
-        <button type="submit" class="save btn btn-default">Delete</button>
+        <button type="submit" class="button">Delete</button>
     </form>
-    <a href="{% url "post_edit" post.slug %}"/>Edit</a>
+    <a class="button" href="{% url "post_edit" post.slug %}"/>Edit</a>
 
     {{ post.content }}
-
 {% endblock %}

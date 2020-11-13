@@ -13,10 +13,13 @@
   <link rel="stylesheet" href="{% static "blog/css/main.css" %}" />
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/posts/new">Add post</a>
+  <nav class="nav">
+    <a class="nav-item" href="/">Home</a>
+    <a class="nav-item" href="/posts/new">Add post</a>
   </nav>
-  {% block content %}{% endblock %}
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
 </body>
 </html>
