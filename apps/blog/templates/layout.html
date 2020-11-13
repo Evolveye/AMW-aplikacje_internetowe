@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{% static "blog/css/sanitize.css" %}" />
   <link rel="stylesheet" href="{% static "blog/css/main.css" %}" />
 </head>
-<body>
+<body class="is-dark">
   <header class="header">
     <h1 class="header-title">
       <a class="header-title-link" href="/">Blog</a>
@@ -25,7 +25,6 @@
       <a class="header-nav-item" href="/posts/new">Add new post</a>
     </nav>
   </header>
-
 
   <main class="main">
     {% block content %}{% endblock %}

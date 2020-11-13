@@ -23,6 +23,13 @@
 
 
 
+.aside {
+  text-align: center;
+  margin: 20px;
+}
+
+
+
 .main {
   position: relative;
   margin: 0 100px;

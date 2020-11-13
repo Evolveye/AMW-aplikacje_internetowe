@@ -247,7 +247,7 @@ blockquote:not( [class] )::before {
 \*/
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body:not( .is-light ) {
     --background-color: #22222c;
     --aside-color: #4e4e64;
@@ -279,7 +279,7 @@ blockquote:not( [class] )::before {
        8px  8px 12px 0 #1e1e28 inset,
       -8px -8px 12px 0 #2b2b39 inset;
   }
-}
+} */
 
 body.is-dark {
   --background-color: #22222c;
