@@ -6,7 +6,10 @@
 }
 
 .header-title {
-  margin: 0;
+  margin: 10px;
+}
+.header-title-link {
+  color: var( --white );
 }
 
 .header-nav {
