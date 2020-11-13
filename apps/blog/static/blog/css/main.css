@@ -20,7 +20,25 @@
 
 
 
+.main {
+  position: relative;
+  margin: 0 100px;
+  padding: 50px 20px;
+}
+
+
+
+.actions {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+
 .post {
+  position: relative;
   display: flex;
   margin: 10px;
   padding: 10px;
@@ -69,4 +87,37 @@
   font-size: 14px;
   font-family: monospace;
   color: var( --white );
+}
+
+
+
+.button {
+  display: flex;
+  margin: 10px;
+  padding: 10px 20px;
+  width: max-content;
+  background-color: #0005;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  color: var( --white );
+}
+a.button {
+  border-bottom: unset;
+}
+.button:hover {
+  background-color: #000a;
+}
+.button.is-green {
+  border: none;
+  background-color: #01f32a55;
+}
+.button.is-green:hover {
+  background-color: #01f32aaa;
+}
+.button.is-red {
+  border: none;
+  background-color: #f3010155;
+}
+.button.is-red:hover {
+  background-color: #f30101aa;
 }
