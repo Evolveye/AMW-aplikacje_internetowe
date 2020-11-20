@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -12,9 +13,9 @@ class Post( models.Model ):
     title = models.CharField( max_length=200, unique=True )
     slug = models.SlugField( max_length=200, unique=True )
     author = models.ForeignKey( User, on_delete=models.CASCADE, related_name="blog_posts" )
-    updated_on = models.DateTimeField( auto_now= True)
+    updated_on = models.DateTimeField( auto_now=True )
     content = models.TextField()
-    created_on = models.DateTimeField( auto_now_add=True)
+    created_on = models.DateTimeField( auto_now_add=True )
     status = models.IntegerField( choices=STATUS, default=0 )
 
     class Meta:
@@ -31,3 +32,12 @@ class Post( models.Model ):
                 "pk": self.pk
             }
         )
+
+
+class Profile( models.Model ):
+    user = models.OneToOneField( settings.AUTH_USER_MODEL, on_delete=models.CASCADE )
+    date_of_birth = models.DateField( blank=True, null=True )
+    photo = models.ImageField( upload_to="users/%Y/%m/%d/", blank=True )
+
+    def __str__(self):
+        return f"Profile for user {self.user.username}"
