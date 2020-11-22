@@ -1,4 +1,4 @@
-# Lab 1
+# Lab 2
 
 Link: [ai-21717-185ic.herokuapp.com](https://ai-21717-185ic.herokuapp.com/)
 
