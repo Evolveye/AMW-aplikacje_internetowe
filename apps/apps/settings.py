@@ -26,7 +26,7 @@ SECRET_KEY = '=uc+7(8i9#-6tlmnv75l0f48($4l12swh6a4hizz(0v#*!)-@='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'ai-21717-185ic.herokuapp.com', '127.0.0.1' ]
+ALLOWED_HOSTS = [ 'ai-21717-185ic.herokuapp.com', '127.0.0.1', 'localhost' ]
 
 
 # Application definition
@@ -144,6 +144,13 @@ STATIC_ROOT = os.path.join( BASE_DIR, 'staticfiles' )
 #     os.path.join(BASE_DIR, 'static'),
 # ]
 
-LOGIN = 'login/'
-LOGIN_REDIRECT_URL = 'profile/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+LOGIN_REDIRECT_URL = '/profile/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SOCIAL_AUTH_GITHUB_KEY = '9fbd255f705e6e4e0166'
+SOCIAL_AUTH_GITHUB_SECRET = '9f70d88c42b2788e5038d1a847a27fe405a3aa83' # IK, it is not smart to put it here ok? It is not important app for me
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1079737752474701'
+SOCIAL_AUTH_FACEBOOK_SECRET = '153c10369b22976ca6ed16d08fc58a32'  # again
