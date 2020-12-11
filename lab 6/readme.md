@@ -19,6 +19,12 @@ Logować można się na konto administratora podając:
 
 
 
+Ogólnie w ramach apki przeprowadziłem malutką refaktoryzację.
+  - przeniosłem pliki statyczne do głównego folderuaplikacji
+  - zrobiłem prosty szablon strony głównej (inny niż ten pod bloga)
+  - dodałem nową subaplikację pod tę laborkę, aby pominać narastajacego bałąganu
+  - delikatnie zmodyfikowałem główne pliki aplikacji (subapka `apps/apps`)
+
 Na stronie głównej widoczny jest licznik odwiedzin.
 Zliczenie następuje raz dziennie dla danego użytkownika.
 Kliknij [tutaj](https://github.com/Evolveye/aplikacje-internetowe-21717-185ic/blob/master/apps/apps/views.py#L6)
