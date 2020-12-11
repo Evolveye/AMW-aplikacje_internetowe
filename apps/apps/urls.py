@@ -21,6 +21,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from . import views
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Snippets API for AMW",
@@ -35,7 +37,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('api/v1/', include('posts.urls')),
+    path('api/v1/', include('posts.urls'), name="api_v1" ),
     path('api-auth/', include('rest_framework.urls')),
     # path('api/v1/rest-auth/', include('rest_auth.urls')),
     # path('api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
@@ -43,4 +45,5 @@ urlpatterns = [
     path( "oauth/", include( "social_django.urls", namespace="social" ) ),
     path( "admin/", admin.site.urls ),
     path( "blog/", include( "blog.urls" ) ),
+    path( "", views.root, name="root" ),
 ]
