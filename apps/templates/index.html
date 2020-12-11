@@ -8,8 +8,8 @@
 
   <title>Homepage</title>
 
-  <link rel="stylesheet" href="{% static "blog/css/sanitize.css" %}" />
-  <link rel="stylesheet" href="{% static "blog/css/main.css" %}" />
+  <link rel="stylesheet" href="{% static "css/sanitize.css" %}" />
+  <link rel="stylesheet" href="{% static "css/main.css" %}" />
 </head>
 <body class="is-dark">
   <h1>Welcome</h1>
@@ -23,5 +23,7 @@
       <li><b>/api/v1/users/:id_usera</b> Podgląd użytkownika</li>
     </ul>
   </p>
+
+  Licznik wizyt: {{ visits }}
 </body>
 </html>
