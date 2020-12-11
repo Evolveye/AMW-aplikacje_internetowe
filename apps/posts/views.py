@@ -2,10 +2,10 @@ from django.contrib.auth import get_user_model
 
 from rest_framework import viewsets
 from rest_framework import generics, permissions
-from .models import Post
+from .models import Post, Task
 
 from .permissions import IsAuthorOrReadOnly
-from .serializers import PostSerializer, UserSerializer
+from .serializers import PostSerializer, UserSerializer, TaskSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthorOrReadOnly,)
@@ -38,3 +38,18 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+
+class TaskList(generics.ListCreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+
+class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
