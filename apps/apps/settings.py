@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ 'ai-21717-185ic.herokuapp.com', '127.0.0.1', 'localhost' ]
 
+CORS_ORIGIN_WHITELIST = ( 'http://localhost:3000', )
 
 # Application definition
 
@@ -40,19 +41,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My added data
+    'corsheaders',
     'social_django',
-    'blog',
     'rest_framework',
     'drf_yasg',
 
     'posts.apps.PostsConfig',
+    'blog',
+    'todo',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
+    # My added data
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    # end of my data
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

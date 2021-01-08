@@ -45,5 +45,6 @@ urlpatterns = [
     path( "oauth/", include( "social_django.urls", namespace="social" ) ),
     path( "admin/", admin.site.urls ),
     path( "blog/", include( "blog.urls" ) ),
+    path( "todos/", include( "todo.urls" ) ),
     path( "", views.root, name="root" ),
 ]
