@@ -164,15 +164,15 @@ SOCIAL_AUTH_GITHUB_SECRET = '9f70d88c42b2788e5038d1a847a27fe405a3aa83' # IK, it 
 SOCIAL_AUTH_FACEBOOK_KEY = '1079737752474701'
 SOCIAL_AUTH_FACEBOOK_SECRET = '153c10369b22976ca6ed16d08fc58a32'  # again
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        #'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         #'rest_framework.permissions.AllowAny',
+#         'rest_framework.permissions.IsAuthenticated',
+#     ],
 
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        # 'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-}
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#         # 'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+# }
