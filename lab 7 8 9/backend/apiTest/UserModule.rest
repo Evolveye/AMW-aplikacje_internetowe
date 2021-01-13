@@ -1,0 +1,73 @@
+@host= http://localhost:3000
+
+// Ctrl Alt R -> RUN COMMAND SHORTCUT
+// Request have Metod in firt line ,
+// next comming up headers,
+// one line of free spacee
+// then put a body for request.
+
+########################### TESTY ##################################
+ GET  {{host}}/test
+ //authentication: Bearer 0.28995713355807684
+########################### ALL USERS #################################
+ GET  {{host}}/users
+
+########################### CREATE USER #################################
+POST {{host}}/api/create/user
+Content-Type: application/json
+
+{
+    "name":"Jarek",
+    "surname":"Bak",
+    "email":"oppoS@num234.com"
+}
+######################### REGISTER ################################
+
+POST {{host}}/api/register
+Content-Type: application/json
+
+{
+    "name":"Olek",
+    "surname":"Wiadro",
+    "email":"tepod63675@maksap.com",
+    "password1":"adam1234#",
+    "password2":"adam1234#"
+}
+######################## LOGIN ##################################
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "login": "adam",
+    "password":"1111"
+}
+###################### ME #####################################
+@token = 0.7524258849532679
+GET {{host}}/api/users/me
+Authentication: Bearer {{token}}
+######################## LOGOUT ####################################
+POST {{host}}/api/logout 
+Authentication: Bearer 0.38029602721803624
+######################### REMIND ###################################
+POST  {{host}}/api/password/remind
+Content-Type: application/json
+
+{
+    "email":"rzekaoazon@gmail.com"
+}
+
+#################################################################
+@uniqueId = 0.3589302676578967
+POST  {{host}}/api/password/reset
+Content-Type: application/json
+
+{
+    "password1":"111234",
+    "password2":"111234",
+    "code":{{uniqueId}}
+
+}
+
+#################################################################
+GET {{host}}/activate?code=0.7135176673972674
+
